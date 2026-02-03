@@ -1749,6 +1749,7 @@ SELECT "Successfully created etl_ART_preparation table";
     assessment_outcome varchar(255),
     risk_education_offered varchar(10),
     risk_reduction varchar(10),
+    on_contraception varchar(10),
     willing_to_take_prep varchar(10),
     reason_not_willing varchar(255),
     risk_edu_offered varchar(10),
@@ -1793,6 +1794,7 @@ SELECT "Successfully created etl_ART_preparation table";
     prep_status varchar(255),
     switching_option VARCHAR(255),
     switching_date DATE,
+    dosing_strategy VARCHAR(255),
     prep_type VARCHAR(10),
     prescribed_prep_today varchar(10),
     prescribed_regimen varchar(10),
@@ -1860,6 +1862,7 @@ SELECT "Successfully created etl_ART_preparation table";
     initial_enrolment_date DATE,
     date_started_prep_trf_facility DATE,
     previously_on_prep VARCHAR(10),
+    dosing_strategy VARCHAR(255),
     prep_type VARCHAR(10),
     regimen VARCHAR(255),
     prep_last_date DATE,
@@ -1931,8 +1934,10 @@ SELECT "Successfully created etl_ART_preparation table";
     prep_contraindications VARCHAR(255),
     treatment_plan VARCHAR(255),
     reason_for_starting_prep INT(11),
+    other_reason_for_prep VARCHAR(255),
     switching_option VARCHAR(255),
     switching_date DATE,
+    dosing_strategy VARCHAR(255),
     prep_type VARCHAR(10),
     prescribed_PrEP VARCHAR(10),
     regimen_prescribed VARCHAR(255),
@@ -4417,7 +4422,7 @@ CREATE TABLE kenyaemr_etl.etl_adr_assessment_tool
 SELECT "Successfully created etl_adr_assessment_tool table";
 
 
--- Create ATP Disclosure Readiness Assessment table 
+-- Create ATP Disclosure Readiness Assessment table
 CREATE TABLE kenyaemr_etl.etl_atp_disclosure_readiness_assessment
 (
     patient_id                                INT(11)  NOT NULL,
@@ -4464,7 +4469,7 @@ CREATE TABLE kenyaemr_etl.etl_atp_disclosure_readiness_assessment
 SELECT "Successfully created etl_atp_disclosure_readiness_assessment table";
 
 
--- Create ATP Taking Charge Tracking Form table 
+-- Create ATP Taking Charge Tracking Form table
 CREATE TABLE kenyaemr_etl.etl_atp_taking_charge_tracking
 (
     patient_id                                INT(11)  NOT NULL,
@@ -4491,7 +4496,7 @@ CREATE TABLE kenyaemr_etl.etl_atp_taking_charge_tracking
 );
 SELECT "Successfully created etl_atp_taking_charge_tracking_form table";
 
--- Create ATP Attach Scale Transition Readiness Assessment table 
+-- Create ATP Attach Scale Transition Readiness Assessment table
 CREATE TABLE kenyaemr_etl.etl_atp_transition_readiness_assessment
 (
     patient_id                                INT(11)  NOT NULL,
@@ -4500,7 +4505,7 @@ CREATE TABLE kenyaemr_etl.etl_atp_transition_readiness_assessment
     uuid                                      CHAR(38) NOT NULL,
     location_id                               INT(11)  NOT NULL,
     provider                                  INT(11)  NOT NULL,
-    visit_date                                DATE,   
+    visit_date                                DATE,
     can_explain_hiv_is                        INT(11),
     explain_how_arv_work                      INT(11),
     knows_name_of_arv                         INT(11),

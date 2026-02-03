@@ -3960,7 +3960,7 @@ CREATE PROCEDURE sp_populate_etl_patient_triage()
 		SELECT "Completed processing Patient Triage data ", CONCAT("Time: ", NOW());
 		END $$
 
--- ------------- populate etl_prep_behaviour_risk_assessment-------------------------
+-- ------------- populate etl_prep_behaviour_risk_assessment--------------------------
 
 DROP PROCEDURE IF EXISTS sp_populate_etl_generalized_anxiety_disorder $$
 CREATE PROCEDURE sp_populate_etl_generalized_anxiety_disorder()
